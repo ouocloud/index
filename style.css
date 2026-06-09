@@ -1,0 +1,126 @@
+/* style.css */
+/* Global reset and font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a; /* fallback */
+  color: #e0e0e0;
+  overflow: hidden;
+}
+/* Background image */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: url('file:///C:/Users/Administrator/.gemini/antigravity/brain/8e9a0b75-b431-4ec8-bc05-c78707ccb92f/background_1780666132461.png') center/cover no-repeat;
+  filter: blur(8px) brightness(0.6);
+  z-index: -1;
+}
+/* Center the login card */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px) saturate(150%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  padding: 2rem 2.5rem;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+}
+.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: #fff;
+}
+/* Input group styling with floating label */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.input-group input {
+  width: 100%;
+  padding: 0.9rem 0.5rem;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s, transform 0.2s;
+}
+.input-group input:focus {
+  background: rgba(255,255,255,0.12);
+  transform: scale(1.02);
+}
+.input-group label {
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  left: 0.4rem;
+  font-size: 0.75rem;
+  color: #a0e1ff;
+  background: rgba(0,0,0,0.4);
+  padding: 0 0.2rem;
+  border-radius: 4px;
+}
+/* Primary button */
+.btn-primary {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #4fd1c5, #5e60ce);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3ac0b4, #4d50c0);
+  transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 1.5rem 1.8rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1.2rem 1.4rem;
+  }
+  .logo {
+    width: 100px;
+  }
+}
