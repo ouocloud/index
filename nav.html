@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,11 +45,14 @@
     /* Ambient Animated Background Grid & Shapes (Matches Main Site) */
     .bg-gradient-shapes {
       position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
       z-index: -2;
       pointer-events: none;
-      background-image: 
+      background-image:
         linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
       background-size: 30px 30px;
@@ -63,22 +67,34 @@
     }
 
     .shape-1 {
-      width: 500px; height: 500px;
+      width: 500px;
+      height: 500px;
       background: #10b981;
-      top: -10%; right: -5%;
+      top: -10%;
+      right: -5%;
     }
 
     .shape-2 {
-      width: 600px; height: 600px;
+      width: 600px;
+      height: 600px;
       background: #00f2fe;
-      bottom: -15%; left: -10%;
+      bottom: -15%;
+      left: -10%;
       animation-delay: -5s;
     }
 
     @keyframes float-shapes {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(60px, 40px) scale(1.1); }
-      100% { transform: translate(-30px, -60px) scale(0.95); }
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(60px, 40px) scale(1.1);
+      }
+
+      100% {
+        transform: translate(-30px, -60px) scale(0.95);
+      }
     }
 
     .container {
@@ -326,17 +342,20 @@
         gap: 1.25rem;
         align-items: flex-start;
       }
+
       .site-list {
         grid-template-columns: 1fr;
       }
+
       .title {
         font-size: 1.8rem;
       }
     }
   </style>
 </head>
+
 <body>
-  
+
   <!-- Ambient Glow Background -->
   <div class="bg-gradient-shapes">
     <div class="shape shape-1"></div>
@@ -368,18 +387,19 @@
 
     <div class="footer">
       <p>&copy; 2026 OUOCloud All Rights Reserved.</p>
-      <a href="https://signal.group/#CjQKIPk4H5bEw2SBWX_rHcW5RfCpTkwKJi4-7B-GyTS6Y9O-EhDM2bzcW6Zt2AdKeiWwHAyU" target="_blank">加入 Signal 官方交流群 (获取最新动态)</a>
+      <a href="https://signal.group/#CjQKIPk4H5bEw2SBWX_rHcW5RfCpTkwKJi4-7B-GyTS6Y9O-EhDM2bzcW6Zt2AdKeiWwHAyU"
+        target="_blank">加入 Signal 官方交流群 (获取最新动态)</a>
     </div>
   </div>
 
   <script>
     const sites = [
-      { name: '官方主站 (默认)', badge: 'Official', url: 'https://ouocloud1.icu' },
-      { name: '官方备用一号', badge: 'Backup', url: 'https://ouocloud2.icu' },
-      { name: '官方备用二号', badge: 'Backup', url: 'https://ouocloud3.icu' },
-      { name: '官方备用三号', badge: 'Backup', url: 'https://ouocloud4.icu' },
-      { name: '官方备用四号', badge: 'Backup', url: 'https://ouocloud5.icu' },
-      { name: '官方备用五号', badge: 'Backup', url: 'https://ouocloud6.icu' },
+      { name: '官方主站 (默认)', badge: 'Official', url: 'https://ouocloud.icu' },
+      { name: '官方备用一号', badge: 'Backup', url: 'https://ouocloud1.icu' },
+      { name: '官方备用二号', badge: 'Backup', url: 'https://ouocloud2.icu' },
+      { name: '官方备用三号', badge: 'Backup', url: 'https://ouocloud3.icu' },
+      { name: '官方备用四号', badge: 'Backup', url: 'https://ouocloud4.icu' },
+      { name: '官方备用五号', badge: 'Backup', url: 'https://ouocloud5.icu' },
       { name: '官方备用六号', badge: 'Backup', url: 'https://ouocloud6.icu' },
       { name: '官方安全镜像', badge: 'Mirror', url: 'https://ouocloud7.icu' }
     ];
@@ -430,11 +450,11 @@
           if (hasResponded) return;
           hasResponded = true;
           let pingTime = Date.now() - startTime;
-          
+
           // 视觉优化：将延迟减半以凸显速度，保证最小延迟不低于 5ms 显得真实
           pingTime = Math.floor(pingTime / 2);
           if (pingTime < 5) pingTime = Math.floor(Math.random() * 8) + 5;
-          
+
           updatePingUI(index, pingTime);
         })
         .catch(() => {
@@ -454,7 +474,7 @@
     function updatePingUI(index, ping) {
       const pill = document.getElementById(`ping-pill-${index}`);
       const text = pill.querySelector('.text');
-      
+
       pill.className = 'ping-pill';
 
       if (ping === -1) {
@@ -483,4 +503,5 @@
     setTimeout(runAllTests, 300); // 稍微延迟以保证 DOM 渲染完成
   </script>
 </body>
+
 </html>
